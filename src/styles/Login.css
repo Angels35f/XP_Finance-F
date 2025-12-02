@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap');
+
+:root {
+  --bg-dark: #0a0b10;
+  --card-bg: #13151b;
+  --neon-purple: #bd00ff;
+  --neon-cyan: #00f3ff;
+  --text-main: #ffffff;
+  --text-muted: #8b9bb4;
+  --border-glow: 0 0 10px rgba(189, 0, 255, 0.3);
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--bg-dark);
+}
+
+.login-container,
+.login-container * {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: radial-gradient(circle at center, #1a1c29 0%, #000000 100%);
+}
+
+.login-split {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  height: 600px;
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 0 1px #333;
+}
+
+.login-illustration {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(180deg, #2b1055 0%, #7597de 100%); 
+  display: flex;
+  align-items: flex-end;
+  justify-content: left;
+  padding: 40px;
+}
+
+.illustration-overlay {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  padding: 20px;
+  border-left: 4px solid var(--neon-cyan);
+  border-radius: 0 8px 8px 0;
+}
+
+.ill-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px rgba(0, 243, 255, 0.6);
+}
+
+.ill-sub {
+  color: #ddd;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.login-card {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--card-bg);
+  position: relative;
+}
+
+.login-card h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-field {
+  background-color: #0a0b10;
+  border: 1px solid #333;
+  color: var(--neon-cyan);
+  font-family: 'Courier New', monospace;
+  padding: 15px;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-field::placeholder {
+  color: #555;
+}
+
+.input-field:focus {
+  border-color: var(--neon-purple);
+  box-shadow: 0 0 15px rgba(189, 0, 255, 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #bd00ff, #8a2be2);
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(189, 0, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.login-card .btn-primary {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.toggle-text {
+  margin-top: 25px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--neon-cyan);
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+@media (max-width: 860px) {
+  .login-split {
+    flex-direction: column;
+    height: auto;
+    max-width: 450px;
+    border-radius: 15px;
+  }
+
+  .login-illustration {
+    display: none;
+  }
+
+  .login-card {
+    padding: 30px 25px;
+  }
+  
+  .login-card h1 {
+    font-size: 1.5rem;
+  }
+}

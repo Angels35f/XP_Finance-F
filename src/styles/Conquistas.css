@@ -1,0 +1,178 @@
+.achievements-page {
+    padding: 2rem;
+    color: #fff;
+    min-height: 100vh;
+    background-color: #121212; 
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #aeaeae;
+}
+
+.achievements-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 2rem;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+@media (max-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.achievement-card {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    border: 1px solid transparent;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    background-color: #252525;
+}
+
+.star-container {
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 3rem; 
+}
+
+.star-icon {
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+}
+
+.lock-overlay {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    font-size: 1.2rem;
+    color: #333;
+    background: #777;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.achievement-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+.achievement-card.locked .star-icon {
+    color: #444; 
+}
+.achievement-card.locked {
+    opacity: 0.7;
+}
+
+.achievement-card.common .star-icon { color: #4caf50; }
+.achievement-card.common:hover { border-color: #4caf50; box-shadow: 0 0 10px rgba(76, 175, 80, 0.2); }
+
+.achievement-card.rare .star-icon { color: #2196f3; }
+.achievement-card.rare:hover { border-color: #2196f3; box-shadow: 0 0 10px rgba(33, 150, 243, 0.2); }
+
+.achievement-card.epic .star-icon { color: #9c27b0; }
+.achievement-card.epic:hover { border-color: #9c27b0; box-shadow: 0 0 15px rgba(156, 39, 176, 0.3); }
+
+.achievement-card.legendary .star-icon { color: #ffd700; filter: drop-shadow(0 0 8px #ffd700); }
+.achievement-card.legendary:hover { border-color: #ffd700; box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); }
+
+.achievement-card.mythic .star-icon { color: #f44336; filter: drop-shadow(0 0 10px #f44336); }
+.achievement-card.mythic:hover { border-color: #f44336; box-shadow: 0 0 25px rgba(244, 67, 54, 0.5); }
+
+.modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.achievement-modal {
+    background: #1e1e1e;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    border: 1px solid #333;
+    animation: fadeIn 0.3s ease;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.modal-icon-large {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+.modal-icon-large.locked { color: #444; }
+.modal-icon-large.common { color: #4caf50; }
+.modal-icon-large.rare { color: #2196f3; }
+.modal-icon-large.epic { color: #9c27b0; }
+.modal-icon-large.legendary { color: #ffd700; filter: drop-shadow(0 0 15px #ffd700); }
+.modal-icon-large.mythic { color: #f44336; filter: drop-shadow(0 0 20px #f44336); }
+
+.modal-desc {
+    color: #ccc;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+.status-badge span {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.badge-locked { background: #444; color: #aaa; }
+.badge-unlocked { background: #4caf50; color: #fff; }
+
+.rarity-label {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+.rarity-label span {
+    font-weight: bold;
+    margin-left: 5px;
+}
+.rarity-label span.common { color: #4caf50; }
+.rarity-label span.rare { color: #2196f3; }
+.rarity-label span.epic { color: #9c27b0; }
+.rarity-label span.legendary { color: #ffd700; }
+.rarity-label span.mythic { color: #f44336; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 767px) {
+  .achievements-page {
+    padding-bottom: calc(var(--mobile-nav-height, 70px) + env(safe-area-inset-bottom));
+  }
+}
