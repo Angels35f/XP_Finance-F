@@ -50,8 +50,7 @@ export default function Header() {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/dashboard" className="text-xl font-bold text-purple-400 flex items-center gap-2">
               <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
-                <img src="../../public/assets/icono.png" alt="icono" style={{ height: '40px' }} />
-                
+                <img src="/assets/icono.png" alt="icono" style={{ height: '40px' }} />                  
               </div>
               XP Finance
             </Link>
